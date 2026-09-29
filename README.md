@@ -1,64 +1,52 @@
 # Personal Expense Tracker
 
-A simple and responsive expense management web application built with **FastAPI** and **Firebase Firestore**. Users can add, view, and delete expenses while tracking the total number of expenses and the total amount spent.
+A responsive web application for managing personal expenses using **FastAPI** and **Firebase Cloud Firestore**. The application allows users to add, view, and delete expenses while automatically tracking the total number of expenses and the total amount spent.
+
+## Live Demo
+
+**[Open Personal Expense Tracker](https://personal-expense-tracker-1a342.web.app/)**
 
 ## Features
 
 * Add new expenses
 * Enter expense title, amount, category, and date
-* Store expenses in Firebase Firestore
-* Display all saved expenses in a table
+* Store expense records in Firebase Cloud Firestore
+* Display all saved expenses in a structured table
 * Delete individual expenses
 * Automatically calculate:
 
   * Total number of expenses
   * Total amount spent
-* Responsive and clean user interface
 * Persistent cloud-based data storage
+* Responsive user interface
+* Clean and simple expense management workflow
 
 ## Tech Stack
 
-**Frontend**
+### Frontend
 
 * HTML5
 * CSS3
 * JavaScript
+* Firebase Web SDK
 
-**Backend**
+### Backend
 
 * Python
 * FastAPI
 * Jinja2
 
-**Database**
+### Database
 
 * Firebase Cloud Firestore
 
-**Deployment**
+### Deployment
 
 * Firebase Hosting
 
-## Project Structure
-
-```text
-personal-expense-tracker/
-│
-├── main.py
-├── requirements.txt
-├── README.md
-├── .gitignore
-│
-├── templates/
-│   └── index.html
-│
-└── static/
-    ├── style.css
-    └── script.js
-```
-
 ## Expense Categories
 
-The application currently supports:
+The application supports the following categories:
 
 * Food
 * Travel
@@ -68,7 +56,12 @@ The application currently supports:
 
 ## How It Works
 
-1. The user enters the expense details.
-2. JavaScript validates the form data.
-3. The expense is added to the `expenses` collection in Firebase Firestore.
-4. Saved expenses are retrieved from Firestore and
+The application follows a simple expense management workflow:
+
+1. The user enters the expense title, amount, category, and date.
+2. JavaScript validates the entered information.
+3. The expense is stored in the `expenses` collection in Firebase Cloud Firestore.
+4. Saved expenses are retrieved from Firestore and displayed in the expense table.
+5. The application calculates the total number of expenses and the total amount spent.
+6. Users can delete individual expenses directly from the table.
+7. Because the records are stored in Firestore, the data remains available after refreshing the page or r
