@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expense Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#expenseForm">Skip to add expense</a>
+
+  <main class="bento">
+
+    <header class="tile hero">
+      <div>
+        <p class="eyebrow">Personal finance</p>
+        <h1>Where your money goes</h1>
+        <p class="lede">Log each expense as it happens and keep a running total.</p>
+      </div>
+      <div class="hero-total">
+        <span class="label">Total spent</span>
+        <span class="big" id="totalAmount">0</span>
+      </div>
+    </header>
+
+    <section class="tile count" aria-label="Expenses logged">
+      <span class="label">Expenses logged</span>
+      <span class="big" id="totalExpenses">0</span>
+    </section>
+
+    <section class="tile form-tile" aria-labelledby="addHeading">
+      <h2 id="addHeading">Add expense</h2>
+
+      <form id="expenseForm">
+        <div class="field">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" placeholder="Groceries" autocomplete="off" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" name="amount" placeholder="0.00" min="0" step="0.01" inputmode="decimal" required>
+          </div>
+          <div class="field">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="" disabled selected>Select a category</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Bills">Bills</option>
+            <option value="Health">Health</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary">Add expense</button>
+      </form>
+    </section>
+
+    <section class="tile list-tile" aria-labelledby="listHeading">
+      <h2 id="listHeading">Recent expenses</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Category</th>
+              <th scope="col">Date</th>
+              <th scope="col"><span class="sr-only">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody id="expenseTableBody"></tbody>
+        </table>
+      </div>
+
+      <p id="emptyMessage" class="empty">No expenses yet. Add your first one using the form.</p>
+    </section>
+
+  </main>
+
+  <!-- KEEP your existing <script> tag(s) for Firebase / script.js here, exactly as they were -->
+  <script type="module" src="/static/script.js"></script>
+</body>
+</html>
